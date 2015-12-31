@@ -1,8 +1,8 @@
-#Linguagem Caipirez
+#Linguagem Caipires
 
 O objetivo dessa linguagem é exercitar o aprendizado sobre como as linguagens de programação funcionam.
 Aqui é exposto uma linguagem ficticia que possui Analisador Léxico, Parser, Runtime e Interpretador.
-A linguagem Caipirez utiliza os recursos providos pela Linguagem Ruby para concretizar a implemetação da linguagem.
+A linguagem Caipires utiliza os recursos providos pela Linguagem Ruby para concretizar a implemetação da linguagem.
 O post completo, explicando cada detalhe das partes envolvidas, pode ser lido [aqui](http://www.sergiohenriquemiranda.com.br)
 
 ## Exemplo
@@ -18,7 +18,7 @@ Ao entrar na seção do irb execute o seguinte código:
 ```ruby
 require 'interpreter'
 
-codigo=<<CAIPIREZ
+codigo=<<CAIPIRES
 crass Caipirao
   derf trabaia
     i = 1
@@ -40,7 +40,7 @@ irf caipira.gosta_de_trabaia iguar true
 erse
   falaso("vidinha mansa")
 enrd
-CAIPIREZ
+CAIPIRES
 
 i = Interpreter.new.eval(codigo)
 ```
@@ -62,8 +62,8 @@ O Parse dos tokens gerados pelo Lexer é feito utilizando a ferramenta Racc, as 
 
 ## Runtime
 
-As classes utilizadas no Runtime da linguagem Caipirez podem ser encontradas dentro dos arquivos presentes na pasta `runtime`. O bootstrap do Runtime é feito pelo arquivo `runtime.rb`. É durante o processo de bootstrap que as classes `Class`, `Object`, `Number`, `String`, entre outras, ganham vida. Alguns métodos também são definidos durante o bootstrap, por exemplo: `falaso`, `new`, `+`, `iguar`, `maioiguar`, entre outros; cada um em sua classe específica. É imporante notar que tudo é um objeto na linguagem Caipirez.
+As classes utilizadas no Runtime da linguagem Caipires podem ser encontradas dentro dos arquivos presentes na pasta `runtime`. O bootstrap do Runtime é feito pelo arquivo `runtime.rb`. É durante o processo de bootstrap que as classes `Class`, `Object`, `Number`, `String`, entre outras, ganham vida. Alguns métodos também são definidos durante o bootstrap, por exemplo: `falaso`, `new`, `+`, `iguar`, `maioiguar`, entre outros; cada um em sua classe específica. É imporante notar que tudo é um objeto na linguagem Caipires.
 
 ## Interpretador
 
-O arquivo `interpreter.rb` é responsável por interpretar e executar o código desenvolvido em Caipirez. Para isso, ele utiliza as classes que representam as funcionalidades da linguagem para alterar o Runtime de acordo com o que o desenvolvedor programou. Basicamente, o `interpreter.rb` visita cada nó produzido pelo Parser e executa a ação específica de cada um.
+O arquivo `interpreter.rb` é responsável por interpretar e executar o código desenvolvido em Caipires. Para isso, ele utiliza as classes que representam as funcionalidades da linguagem para alterar o Runtime de acordo com o que o desenvolvedor programou. Basicamente, o `interpreter.rb` visita cada nó produzido pelo Parser e executa a ação específica de cada um.
