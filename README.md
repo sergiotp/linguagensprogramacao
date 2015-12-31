@@ -1,6 +1,6 @@
 #Linguagem Caipirez
 
-O intuito dessa linguagem é exercitar o aprendizado sobre como as linguagens de programação funcionam.
+O objetivo dessa linguagem é exercitar o aprendizado sobre como as linguagens de programação funcionam.
 Aqui é exposto uma linguagem ficticia que possui Analisador Léxico, Parser, Runtime e Interpretador.
 A linguagem Caipirez utiliza os recursos providos pela Linguagem Ruby para concretizar a implemetação da linguagem.
 O post completo, explicando cada detalhe das partes envolvidas, pode ser lido [aqui](http://www.sergiohenriquemiranda.com.br)
@@ -27,12 +27,22 @@ crass Caipirao
       i = i + 1
     enrd
   enrd
+
+  derf gosta_de_trabaia
+    farse
+  enrd
 enrd
 caipira = Caipirao.new
 caipira.trabaia
+
+irf caipira.gosta_de_trabaia iguar true
+  falaso("trabaiado")
+erse
+  falaso("vidinha mansa")
+enrd
 CAIPIREZ
 
-i = Interpreter.new.eval(s)
+i = Interpreter.new.eval(codigo)
 ```
 
 Perceba que a linguagem é facilitada para aumentar a produtividade das pessoas do interior de Minas Gerais!
@@ -44,7 +54,7 @@ Para finalizar as instruções utilizamos a keyword `enrd`.
 
 ## Lexer
 
-A análise léxica é feita utilizando a Gem Rex, as definições da gramática podem sem encontradas no arquivo `tokens.rex`.
+A análise léxica é feita utilizando a Gem Rex, as definições da gramática podem sem encontradas no arquivo `tokens.rex`. É através da análise léxica que uma cadeia de caracteres ganha significado para a nossa linguagem.
 
 ## Parser
 
@@ -52,8 +62,8 @@ O Parse dos tokens gerados pelo Lexer é feito utilizando a ferramenta Racc, as 
 
 ## Runtime
 
-As classes utilizadas no Runtime da linguagem Caipirez podem ser encontradas dentro dos arquivos presentes na pasta `runtime`. O bootstrap do Runtime é feito pelo arquivo `runtime.rb`.
+As classes utilizadas no Runtime da linguagem Caipirez podem ser encontradas dentro dos arquivos presentes na pasta `runtime`. O bootstrap do Runtime é feito pelo arquivo `runtime.rb`. É durante o processo de bootstrap que as classes `Class`, `Object`, `Number`, `String`, entre outras, ganham vida. Alguns métodos também são definidos durante o bootstrap, por exemplo: `falaso`, `new`, `+`, `iguar`, `maioiguar`, entre outros; cada um em sua classe específica. É imporante notar que tudo é um objeto na linguagem Caipirez.
 
 ## Interpretador
 
-O arquivo `interpreter.rb` é responsável por interpretar e executar o código desenvolvido em Caipirez.
+O arquivo `interpreter.rb` é responsável por interpretar e executar o código desenvolvido em Caipirez. Para isso, ele utiliza as classes que representam as funcionalidades da linguagem para alterar o Runtime de acordo com o que o desenvolvedor programou. Basicamente, o `interpreter.rb` visita cada nó produzido pelo Parser e executa a ação específica de cada um.
