@@ -48,7 +48,7 @@ Constants["Number"].def :< do |receiver, arguments|
   end
 end
 
-Constants["Number"].def :iguar do |receiver, arguments|
+Constants["Object"].def :iguar do |receiver, arguments|
   a = receiver.ruby_value
   b = arguments.first.ruby_value
   if a == b
@@ -58,7 +58,7 @@ Constants["Number"].def :iguar do |receiver, arguments|
   end
 end
 
-Constants["Number"].def :maioiguar do |receiver, arguments|
+Constants["Object"].def :maioiguar do |receiver, arguments|
   a = receiver.ruby_value
   b = arguments.first.ruby_value
   if a >= b
@@ -68,7 +68,7 @@ Constants["Number"].def :maioiguar do |receiver, arguments|
   end
 end
 
-Constants["Number"].def :menoiguar do |receiver, arguments|
+Constants["Object"].def :menoiguar do |receiver, arguments|
   a = receiver.ruby_value
   b = arguments.first.ruby_value
   if a <= b
